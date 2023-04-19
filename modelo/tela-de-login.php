@@ -19,7 +19,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             font-family:fantasy;
-            background: url("img/fundo.jpg") no-repeat center center;
+            background: url("../img/Fundo.jpg") no-repeat center center;
             background-size: cover;
             height: 97vh;
         }
@@ -102,7 +102,6 @@
     <!-- Fim mensagem de erro -->
     <div>
         <h1><center>Login</center></h1>
-        <form action="control/controle_login.php" method="post">
             <input type="email" placeholder="E-mail" name="email">
             <br><br>
             <input type="password" placeholder="Senha" name="senha">

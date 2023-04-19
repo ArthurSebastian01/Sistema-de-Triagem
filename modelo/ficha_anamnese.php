@@ -12,9 +12,9 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             font-family:fantasy;
-            background: url("img/Fundo.jpg") no-repeat center center;
+            background: url("../img/Fundo.jpg") no-repeat center center;
             background-size: cover;
-            height: 212vh;
+            height: 100vh;
         }
         div{
             position: absolute;
@@ -38,7 +38,7 @@
             background-color: #2E8B57;
             border: none;
             padding: 15px;
-            width: 87%;
+            width: 30%;
             border-radius: 10px;
             color: black;
             font-size: 15px;
@@ -47,13 +47,11 @@
         button:hover{
             background-color:green;
             cursor: pointer;
-            width: 100px;
-			height: 30px;
         }
     </style>
 </head>
 <body>
-<form>
+<div>
   <h1><center>Ficha de Anamnese</center></h1>
   <center><input type="text" placeholder="Nome Completo">
   <br><br>
@@ -69,24 +67,10 @@
   <textarea style="color: black; background-color: transparent;" type="queixa" placeholder="Queixa" rows="3" cols="32"></textarea><br><br>
   <textarea style="color: black; background-color: transparent;" type="historico" placeholder="Historico" rows="3" cols="32"></textarea><br><br>
 
-  <input type="checkbox" placeholder="sintomas[]" value="diarreia">Diarreia<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="constipacao">Constipação<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="intestino-nao-esvaziado">Sensação de que o intestino não é completamente esvaziado<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="sangue-nas-fezes">Presença de sangue nas fezes<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="dor-abdominal">Dor abdominal tipo cólica<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="inchaco-abdominal">Sensação de inchaço abdominal<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="cansaco-fadiga">Cansaço e fadiga<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="perda-de-peso">Perda de peso sem um motivo específico<input type="number" placeholder="Nivel">
-  <br><br>
-  <button type="submit">Enviar</button></center>
-</form>
+  <form action="ficha_anamnese2.php">
+  <button type="submit">prosseguir</button></center>
+  </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
