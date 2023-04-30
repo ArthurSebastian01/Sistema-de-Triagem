@@ -14,7 +14,7 @@
             font-family:fantasy;
             background: url("../img/Fundo.jpg") no-repeat center center;
             background-size: cover;
-            height: 100vh;
+            height: 101vh;
         }
         div{
             position: absolute;

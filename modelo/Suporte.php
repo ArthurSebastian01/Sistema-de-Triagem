@@ -14,7 +14,7 @@
             font-family:fantasy;
             background: url("../img/Fundo.jpg") no-repeat center center;
             background-size: cover;
-            height: 138vh;
+            height: 100vh;
         }
         div{
             position: absolute;
@@ -24,7 +24,7 @@
             padding: 80px;
             border-radius: 15px;
             color: black;
-            height: 125vh;
+            height: 55vh;
             
         }
         input{
@@ -38,7 +38,7 @@
             background-color: #2E8B57;
             border: none;
             padding: 15px;
-            width: 30%;
+            width: 50%;
             border-radius: 10px;
             color: black;
             font-size: 15px;
@@ -52,27 +52,20 @@
 </head>
 <body>
 <div>
-  <h1><center>Ficha de Anamnese</center></h1>
+  <h1><center>Suporte Online</center></h1>
+  <center>
+  <select type="text" placeholder="Requisição">
+  <option value="Genero">Tipo de requisição</option>
+    <option value="Genero">Cadastro</option>
+    <option value="masculino">Ficha de Anamnese</option>
+    <option value="feminino">Gráfico</option>
+    <option value="outros">Outros</option>
+  </select><br><br>
 
-  <center><input type="checkbox" placeholder="sintomas[]" value="diarreia">Diarreia<input type="number" placeholder="Nivel">
+  <textarea style="color: black; background-color: transparent;" type="" placeholder="Requisição" rows="3" cols="32"></textarea><br><br>
   <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="constipacao">Constipação<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="intestino-nao-esvaziado">Sensação de que o intestino não é completamente esvaziado<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="sangue-nas-fezes">Presença de sangue nas fezes<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="dor-abdominal">Dor abdominal tipo cólica<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="inchaco-abdominal">Sensação de inchaço abdominal<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="cansaco-fadiga">Cansaço e fadiga<input type="number" placeholder="Nivel">
-  <br><br>
-  <input type="checkbox" placeholder="sintomas[]" value="perda-de-peso">Perda de peso sem um motivo específico<input type="number" placeholder="Nivel">
-  <br><br>
-
   <form action="tela-principal.html">
-  <button type="submit">Enviar</button></center>
+  <button type="submit">Enviar requisição</button></center>
   </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

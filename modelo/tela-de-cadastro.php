@@ -76,7 +76,7 @@
         <br><br>
         <input type="password" placeholder="Senha">
         <br><br>
-        <form action="ficha_anamnese.php">
+        <form action="tela-principal.html">
         <button type="submit">Cadastrar</button>
         </form>
     </form>

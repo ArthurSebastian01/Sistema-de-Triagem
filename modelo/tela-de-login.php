@@ -106,7 +106,7 @@
             <br><br>
             <input type="password" placeholder="Senha" name="senha">
             <br><br>
-            <form action="ficha_anamnese.php">
+            <form action="tela-principal.html">
             <button type="submit">Enviar</button>
             </form>
         </form>
