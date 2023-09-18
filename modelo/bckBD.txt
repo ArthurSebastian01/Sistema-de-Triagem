@@ -1,0 +1,57 @@
+public function excluir()
+    {
+        $id= $this->getIdCliente();
+        $stmt = $this->banco->getConexao()->prepare("delete from Cliente where idCliente = ?");
+        $stmt->bind_param("i",  $id );
+        return $stmt->execute();
+    }
+
+    public function atualizar()
+    {
+        $nome       = $this->getNome();
+        $nome       = $this->getSobrenome();
+        $email      = $this->getEmail();
+        $senha      = $this->getSenha();
+        $id= $this->getIdCliente();
+        $stmt = $this->banco->getConexao()->prepare("update cliente 
+                                    set nome=?,
+                                    set sobrenome=?,  
+                                    email=?,
+                                    senha=?,
+                                    where idCliente = ?");
+        $stmt->bind_param("ssssi", $nome , $sobrenome, $email, $senha, $id);
+        return $stmt->execute();
+    }
+    public function buscarClientePorId($id)
+    {
+        $stmt = $this->banco->getConexao()->prepare("select * from cliente where idCliente = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        while ($linha = $resultado->fetch_object()) {
+            $this->setIdCliente($linha->idCliente);
+            $this->setNome($linha->nome);
+            $this->setSobrenome($linha->sobrenome);
+            $this->setEmail($linha->email);
+            $this->setSenha($linha->senha);
+        }
+        return $this;
+    }
+    public function listarClientes()
+    {
+        $stmt = $this->banco->getConexao()->prepare("Select * from Cliente");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $vetorClientes = array();
+        $i = 0;
+        while ($linha = mysqli_fetch_object($result)) {
+            $vetorClientes[$i] = new Cliente();
+            $vetorClientes[$i]->setIdCliente($linha->idCliente);
+            $vetorClientes[$i]->setNome($linha->nome);
+            $vetorClientes[$i]->setSobrenome($linha->sobrenome);
+            $vetorClientes[$i]->setEmail($linha->email);
+            $vetorClientes[$i]->setSenha($linha->senha);
+            $i++;
+        }
+        return $vetorClientes;
+    }
