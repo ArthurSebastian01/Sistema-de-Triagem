@@ -71,6 +71,7 @@ if (isset($_SESSION['mensagem_erro'])) {
     <div>
         <h1><center>Acesso</center></h1>
         <form method="POST" action="BuscarUsuarios.php">
+        <form action="processar_usuario.php" method="POST">   
             <input type="email" placeholder="E-mail" name="email" required>
             <br><br>
             <input type="password" placeholder="Senha" name="senha" required>

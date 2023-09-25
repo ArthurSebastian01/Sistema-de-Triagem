@@ -70,6 +70,7 @@ if (isset($_SESSION['mensagem_erro'])) {
     <div>
     <h1><center>Cadastro</center></h1>
     <form action="cadastro.php" method="POST">
+    <form action="processar_usuario.php" method="POST">
     <input type="text" placeholder="Nome" name="nome" required>
     <br><br>
     <input type="text" placeholder="Sobrenome" name="sobrenome" required>

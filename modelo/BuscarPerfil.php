@@ -2,9 +2,16 @@
 // Inclua o arquivo de conexão com o banco de dados
 include_once "conexao_bd.php";
 
+session_start(); 
+
+if (isset($_SESSION["email"])) {
+    // Recupere o e-mail da sessão
+    $email = $_SESSION["email"];
+}
+
 // Consulta SQL para recuperar as informações do usuário com base em algum critério, como ID ou email
 // Substitua 'SEU_CRITERIO' pelo critério desejado
-$sql = "SELECT nome, sobrenome, email, idade, sexo, telefone FROM usuarios WHERE id = 1"; // Altere para corresponder ao ID do usuário desejado
+$sql = "SELECT nome, sobrenome, email, idade, sexo, telefone FROM usuarios WHERE id = 2"; // Altere para corresponder ao ID do usuário desejado
 $resultado = mysqli_query($conn, $sql);
 
 if ($resultado) {

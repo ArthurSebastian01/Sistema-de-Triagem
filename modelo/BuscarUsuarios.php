@@ -1,8 +1,10 @@
 <?php
 include_once "conexao_bd.php";
 
+
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+
 
 // Consulta para verificar se o usuário com o email e senha existe
 $consulta_usuario = "SELECT id, nome FROM usuarios WHERE email = '$email' AND senha = '$senha'";
@@ -19,4 +21,5 @@ if (mysqli_num_rows($resultado_consulta) > 0) {
     header("Location: tela-de-login.php");
     exit();
 }
+
 ?>
