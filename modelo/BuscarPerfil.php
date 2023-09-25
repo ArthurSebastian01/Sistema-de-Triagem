@@ -4,24 +4,22 @@ include_once "conexao_bd.php";
 
 // Consulta SQL para recuperar as informações do usuário com base em algum critério, como ID ou email
 // Substitua 'SEU_CRITERIO' pelo critério desejado
-$sql = "SELECT Nome, Sobrenome, email, Idade, Sexo, Telefone FROM ficha WHERE email = 'maria@example.com'";
+$sql = "SELECT nome, sobrenome, email, idade, sexo, telefone FROM usuarios WHERE id = 1"; // Altere para corresponder ao ID do usuário desejado
+$resultado = mysqli_query($conn, $sql);
 
+if ($resultado) {
+    // Recupere os dados do usuário
+    $dadosUsuario = mysqli_fetch_assoc($resultado);
 
-    // Execute a consulta
-    if ($stmt->execute()) {
-        // Associe as colunas do resultado a variáveis
-        $stmt->bind_result($nome, $sobrenome, $email, $idade, $sexo, $telefone);
-
-        // Busque o resultado
-        $stmt->fetch();
-
-        // Feche a declaração preparada
-        $stmt->close();
-    } else {
-        // Trate erros na execução da consulta, se necessário
-        echo "Erro ao executar a consulta.";
-    }
-
-// Feche a conexão com o banco de dados
-$conn->close();
+    // Atribua os valores às variáveis
+    $nome = $dadosUsuario['nome'];
+    $sobrenome = $dadosUsuario['sobrenome'];
+    $email = $dadosUsuario['email'];
+    $idade = $dadosUsuario['idade'];
+    $sexo = $dadosUsuario['sexo'];
+    $telefone = $dadosUsuario['telefone'];
+} else {
+    // Lida com erros, se houver
+    echo "Erro ao recuperar os dados do usuário: " . mysqli_error($conn);
+}
 ?>

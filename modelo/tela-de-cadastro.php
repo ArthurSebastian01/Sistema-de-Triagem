@@ -68,18 +68,26 @@ if (isset($_SESSION['mensagem_erro'])) {
 </head>
 <body>
     <div>
-        <h1><center>Cadastro</center></h1>
-        <form action="cadastro.php" method="POST">
-            <input type="text" placeholder="Nome" name="nome" required>
-            <br><br>
-            <input type="text" placeholder="Sobrenome" name="sobrenome" required>
-            <br><br>
-            <input type="email" placeholder="E-mail" name="email" required>
-            <br><br>
-            <input type="password" placeholder="Senha" name="senha" required>
-            <br><br>
-            <button type="submit">Cadastrar</button><p id="mensagem-sucesso" style="display: none; color: green;">Cadastro realizado com sucesso!</p>
-        </form>
+    <h1><center>Cadastro</center></h1>
+    <form action="cadastro.php" method="POST">
+    <input type="text" placeholder="Nome" name="nome" required>
+    <br><br>
+    <input type="text" placeholder="Sobrenome" name="sobrenome" required>
+    <br><br>
+    <input type="email" placeholder="E-mail" name="email" required>
+    <br><br>
+    <input type="text" placeholder="Idade" name="idade">
+    <br><br>
+    <input type="text" placeholder="Telefone" name="telefone">
+    <br><br>
+    <input type="text" placeholder="Sexo" name="sexo">
+    <br><br>
+    <input type="password" placeholder="Senha" name="senha" required>
+    <br><br>
+    <button type="submit">Cadastrar</button>
+    <p id="mensagem-sucesso" style="display: none; color: green;">Cadastro realizado com sucesso!</p>
+    </form>
+
     </div>
     <script>
         function exibirMensagem() {

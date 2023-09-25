@@ -56,7 +56,9 @@
 </head>
 <body>
 <div>
+  <?php include "BuscarPerfil.php"; ?>
   <h1><center>Perfil do usuario</center></h1>
+  <form method="POST" action="AlterarPerfil.php">
   <input type="text" placeholder="Nome" name="Nome" value="<?php echo $nome; ?>">
     <br>
     <input type="text" placeholder="Sobrenome" name="Sobrenome" value="<?php echo $sobrenome; ?>">
@@ -71,7 +73,7 @@
     <br><br>
 
     <center><button type="submit" class="btn btn-primary">Atualizar Perfil</button></center>
-    <center><button type="submit" class="btn btn-deletar">Deletar Perfil</button></center>
+    <center><button type="submit" class="btn btn-deletar" formaction="confirmar_exclusao.php">Deletar Perfil</button></center>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>

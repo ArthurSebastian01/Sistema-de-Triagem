@@ -62,8 +62,7 @@
           </li>
           <li><a>Configurações</a>
             <ul>
-              <form method="POST" action="BuscarPerfil.php">
-              <button type="submit">Perfil do Usuario</button>
+            <a href="PerfilUser.php">Perfil do Usuario</a></button>
               <li><a href="Suporte.php">Suporte</a></li>
               <li><a href="../index.html">Sair</a></li>
             </ul>
