@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -64,7 +69,7 @@
             <ul>
             <a href="PerfilUser.php">Perfil do Usuario</a></button>
               <li><a href="Suporte.php">Suporte</a></li>
-              <li><a href="../index.html">Sair</a></li>
+              <li><a href="../control/controle_logout.php">Sair</a></li>
             </ul>
           </li>
         </ul>
