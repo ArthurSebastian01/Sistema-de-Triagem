@@ -214,9 +214,11 @@
         Quem? <input type="text" name="quem_historico" placeholder=""><br>
         Qual doença? <input type="text" name="qual_doenca" placeholder="" rows="5" cols="32"><br>
         <br>
-    <form action="tela-principal.html" method="POST">
 
-    <center><button type="submit">Enviar</button></center>
+
+        <form action="InserirFicha.php" method="POST">
+        <button type="submit">Enviar</button>
+    </form>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
