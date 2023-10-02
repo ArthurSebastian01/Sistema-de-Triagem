@@ -16,7 +16,7 @@ $resultado_usuarios = mysqli_query($conn, $result_usuarios);
 // Verifica se a inserção foi bem-sucedida
 if ($resultado_usuarios) {
     // Redireciona para tela-principal.php
-    header("Location: ficha_anamnese.php");
+    header("Location: Dados_clinicos.php");
     exit(); // Certifique-se de sair após o redirecionamento
 } else {
     // Se ocorrer um erro na inserção, defina uma mensagem de erro na variável de sessão

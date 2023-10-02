@@ -145,7 +145,6 @@
         Nível: <input type="text" name="nivel_dor_intestino" placeholder=""><br>
         Muito Dor. -5<br>
         Pouca dor. -0<br>
-        <br><br><br>
 
         <!-- Sobre a Alimentação -->
         <center><h2>Sobre a Alimentação</h2></center>
