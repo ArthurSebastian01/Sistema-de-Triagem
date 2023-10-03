@@ -216,7 +216,7 @@
         <br>
 
 
-        <form action="InserirFicha.php" method="POST">
+        <form method="POST" action="InserirFicha.php">
         <center><button type="submit">Enviar</button></center>
     </form>
     </div>

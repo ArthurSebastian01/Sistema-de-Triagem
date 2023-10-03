@@ -39,8 +39,47 @@ $historico_familiar = filter_input(INPUT_POST, 'historico_familiar', FILTER_SANI
 $quem_historico = filter_input(INPUT_POST, 'quem_historico', FILTER_SANITIZE_STRING);
 $qual_doenca = filter_input(INPUT_POST, 'qual_doenca', FILTER_SANITIZE_STRING);
 
+
+
+echo "Nome: " . $nome . "<br>";
+echo "Idade: " . $idade . "<br>";
+echo "Peso: " . $peso . "<br>";
+echo "Altura: " . $altura . "<br>";
+echo "Sexo: " . $sexo . "<br>";
+echo "Bebe Água: " . $bebe_agua . "<br>";
+echo "Nível de Bebida de Água: " . $nivel_bebe_agua . "<br>";
+echo "Toma Refrigerante: " . $toma_refrigerante . "<br>";
+echo "Mudança de Hábito de Hidratação: " . $mudanca_habito_hidratacao . "<br>";
+echo "Faz Cocô: " . $faz_coco . "<br>";
+echo "Nível de Quantidade de Cocô: " . $nivel_qnt_faz_coco . "<br>";
+echo "Sente Dor ao Fazer Cocô: " . $sente_dor_fazer_coco . "<br>";
+echo "Nível de Dor ao Fazer Cocô: " . $nivel_dor_fazer_coco . "<br>";
+echo "Alteração de Hábito Intestinal: " . $alteracao_habito_intestinal . "<br>";
+echo "Nível de Dor no Intestino: " . $nivel_dor_intestino . "<br>";
+echo "Dificuldade na Infância: " . $dificuldade_infancia . "<br>";
+echo "Sangramento nas Fezes: " . $sangramento_fezes . "<br>";
+echo "Nível de Sangramento nas Fezes: " . $nivel_sangramento_fezes . "<br>";
+echo "Hemorroida: " . $hemorroida . "<br>";
+echo "Dor no Abdômen: " . $dor_abdomen . "<br>";
+echo "Nível de Dor no Abdômen: " . $nivel_dor_abdomen . "<br>";
+echo "Come Fritura: " . $come_fritura . "<br>";
+echo "Come Presunto: " . $come_presunto . "<br>";
+echo "Come Hambúrguer: " . $come_hamburguer . "<br>";
+echo "Toma Leite Caixinha: " . $toma_leite_caixinha . "<br>";
+echo "Uso de Tempero: " . $uso_tempero . "<br>";
+echo "Come Lanches: " . $come_lanches . "<br>";
+echo "Come Lasanha: " . $come_lasanha . "<br>";
+echo "Come Salada: " . $come_salada . "<br>";
+echo "Usa Azeite de Tempero: " . $usa_azeite_tempero . "<br>";
+echo "Teve Mudança de Hábito Alimentar: " . $teve_mudanca_habito_alimentar . "<br>";
+echo "Teve Emagrecimento Repentino: " . $tev_emagrecimento_repentino . "<br>";
+echo "Nível de Emagrecimento Repentino: " . $nivel_emagrecimento_repentino . "<br>";
+echo "Histórico Familiar: " . $historico_familiar . "<br>";
+echo "Quem no Histórico: " . $quem_historico . "<br>";
+echo "Qual Doença: " . $qual_doenca . "<br>";
+
 // Preparar a consulta SQL com parâmetros
-$sql = "INSERT INTO ficha (nome, idade, peso, altura, sexo, bebe_agua, nivel_bebe_agua, toma_refrigerante, mudanca_habito_hidratacao, faz_coco, nivel_qnt_faz_coco, sente_dor_fazer_coco, nivel_dor_fazer_coco, alteracao_habito_intestinal, nivel_dor_intestino, dificuldade_infancia, sangramento_fezes, nivel_sangramento_fezes, hemorroida, dor_abdomen, nivel_dor_abdomen, come_fritura, come_presunto, come_hamburguer, toma_leite_caixinha, uso_tempero, come_lanches, come_lasanha, come_salada, usa_azeite_tempero, teve_mudanca_habito_alimentar, tev_emagrecimento_repentino, nivel_emagrecimento_repentino, historico_familiar, quem_historico, qual_doenca) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO ficha (nome, idade, peso, altura, sexo, bebe_agua, nivel_bebe_agua, toma_refrigerante, mudanca_habito_hidratacao, faz_coco, nivel_qnt_faz_coco, sente_dor_fazer_coco, nivel_dor_fazer_coco, alteracao_habito_intestinal, nivel_dor_intestino, dificuldade_infancia, sangramento_fezes, nivel_sangramento_fezes, hemorroida, dor_abdomen, nivel_dor_abdomen, come_fritura, come_presunto, come_hamburguer, toma_leite_caixinha, uso_tempero, come_lanches, come_lasanha, come_salada, usa_azeite_tempero, teve_mudanca_habito_alimentar, tev_emagrecimento_repentino, nivel_emagrecimento_repentino, historico_familiar, quem_historico, qual_doenca) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 // Preparar a declaração SQL
 $stmt = mysqli_prepare($conn, $sql);
@@ -48,8 +87,7 @@ $stmt = mysqli_prepare($conn, $sql);
 // Verificar se a preparação da declaração foi bem-sucedida
 if ($stmt) {
     // Vincular os parâmetros da declaração com os valores das variáveis
-    mysqli_stmt_bind_param($stmt, "sissssssssisssssssssssssssssssssss", $nome, $idade, $peso, $altura, $sexo, $bebe_agua, $nivel_bebe_agua, $toma_refrigerante, $mudanca_habito_hidratacao, $faz_coco, $nivel_qnt_faz_coco, $sente_dor_fazer_coco, $nivel_dor_fazer_coco, $alteracao_habito_intestinal, $nivel_dor_intestino, $dificuldade_infancia, $sangramento_fezes, $nivel_sangramento_fezes, $hemorroida, $dor_abdomen, $nivel_dor_abdomen, $come_fritura, $come_presunto, $come_hamburguer, $toma_leite_caixinha, $uso_tempero, $come_lanches, $come_lasanha, $come_salada, $usa_azeite_tempero, $teve_mudanca_habito_alimentar, $tev_emagrecimento_repentino, $nivel_emagrecimento_repentino, $historico_familiar, $quem_historico, $qual_doenca);
-
+    mysqli_stmt_bind_param($stmt, "sissssssssisssssssssssssssssssssssss", $nome, $idade, $peso, $altura, $sexo, $bebe_agua, $nivel_bebe_agua, $toma_refrigerante, $mudanca_habito_hidratacao, $faz_coco, $nivel_qnt_faz_coco, $sente_dor_fazer_coco, $nivel_dor_fazer_coco, $alteracao_habito_intestinal, $nivel_dor_intestino, $dificuldade_infancia, $sangramento_fezes, $nivel_sangramento_fezes, $hemorroida, $dor_abdomen, $nivel_dor_abdomen, $come_fritura, $come_presunto, $come_hamburguer, $toma_leite_caixinha, $uso_tempero, $come_lanches, $come_lasanha, $come_salada, $usa_azeite_tempero, $teve_mudanca_habito_alimentar, $tev_emagrecimento_repentino, $nivel_emagrecimento_repentino, $historico_familiar, $quem_historico, $qual_doenca);
     // Executar a declaração SQL
     if (mysqli_stmt_execute($stmt)) {
         // Redirecionar para tela-principal.php
