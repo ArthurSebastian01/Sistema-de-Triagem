@@ -18,7 +18,7 @@
         }
         div{
             position: absolute;
-            top: 20%;
+            top: 25%;
             left: 50%;
             transform: translate(-50%,-50%);
             padding: 80px;
@@ -50,9 +50,9 @@
     </style>
 </head>
 <body>
-    <div>
   <center><h1>Dados Clinicos do Paciente</h1></center>
   <br><br>
+  <div>
   <h2>Dados de Identificação</h2>
         Nome: <input type="text" name="nome" placeholder=""><br>
         Idade: <input type="number" name="idade" placeholder=""><br>
@@ -217,7 +217,7 @@
 
 
         <form action="InserirFicha.php" method="POST">
-        <button type="submit">Enviar</button>
+        <center><button type="submit">Enviar</button></center>
     </form>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
