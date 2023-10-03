@@ -4,8 +4,8 @@ include_once "conexao_bd.php";
 // Coletar dados do formulário
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
 $idade = filter_input(INPUT_POST, 'idade', FILTER_SANITIZE_NUMBER_INT);
-$peso = filter_input(INPUT_POST, 'peso', FILTER_SANITIZE_NUMBER_FLOAT);
-$altura = filter_input(INPUT_POST, 'altura', FILTER_SANITIZE_NUMBER_FLOAT);
+$peso = filter_input(INPUT_POST, 'peso', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+$altura = filter_input(INPUT_POST, 'altura', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 $sexo = filter_input(INPUT_POST, 'sexo', FILTER_SANITIZE_STRING);
 $bebe_agua = filter_input(INPUT_POST, 'bebe_agua', FILTER_SANITIZE_STRING);
 $nivel_bebe_agua = filter_input(INPUT_POST, 'nivel_bebe_agua', FILTER_SANITIZE_NUMBER_INT);
@@ -39,8 +39,7 @@ $historico_familiar = filter_input(INPUT_POST, 'historico_familiar', FILTER_SANI
 $quem_historico = filter_input(INPUT_POST, 'quem_historico', FILTER_SANITIZE_STRING);
 $qual_doenca = filter_input(INPUT_POST, 'qual_doenca', FILTER_SANITIZE_STRING);
 
-
-
+// Para depuração, vamos dar um echo nos valores coletados
 echo "Nome: " . $nome . "<br>";
 echo "Idade: " . $idade . "<br>";
 echo "Peso: " . $peso . "<br>";
@@ -87,7 +86,21 @@ $stmt = mysqli_prepare($conn, $sql);
 // Verificar se a preparação da declaração foi bem-sucedida
 if ($stmt) {
     // Vincular os parâmetros da declaração com os valores das variáveis
-    mysqli_stmt_bind_param($stmt, "sissssssssisssssssssssssssssssssssss", $nome, $idade, $peso, $altura, $sexo, $bebe_agua, $nivel_bebe_agua, $toma_refrigerante, $mudanca_habito_hidratacao, $faz_coco, $nivel_qnt_faz_coco, $sente_dor_fazer_coco, $nivel_dor_fazer_coco, $alteracao_habito_intestinal, $nivel_dor_intestino, $dificuldade_infancia, $sangramento_fezes, $nivel_sangramento_fezes, $hemorroida, $dor_abdomen, $nivel_dor_abdomen, $come_fritura, $come_presunto, $come_hamburguer, $toma_leite_caixinha, $uso_tempero, $come_lanches, $come_lasanha, $come_salada, $usa_azeite_tempero, $teve_mudanca_habito_alimentar, $tev_emagrecimento_repentino, $nivel_emagrecimento_repentino, $historico_familiar, $quem_historico, $qual_doenca);
+    mysqli_stmt_bind_param(
+        $stmt,
+        "siffssisssisisissississsssssssssiss",
+        $nome, $idade, $peso, $altura, $sexo, $bebe_agua, $nivel_bebe_agua, 
+        $toma_refrigerante, $mudanca_habito_hidratacao, $faz_coco, $nivel_qnt_faz_coco, 
+        $sente_dor_fazer_coco, $nivel_dor_fazer_coco, $alteracao_habito_intestinal, 
+        $nivel_dor_intestino, $dificuldade_infancia, $sangramento_fezes, 
+        $nivel_sangramento_fezes, $hemorroida, $dor_abdomen, $nivel_dor_abdomen, 
+        $come_fritura, $come_presunto, $come_hamburguer, $toma_leite_caixinha, 
+        $uso_tempero, $come_lanches, $come_lasanha, $come_salada, $usa_azeite_tempero, 
+        $teve_mudanca_habito_alimentar, $tev_emagrecimento_repentino, 
+        $nivel_emagrecimento_repentino, $historico_familiar, $quem_historico, 
+        $qual_doenca
+    );
+
     // Executar a declaração SQL
     if (mysqli_stmt_execute($stmt)) {
         // Redirecionar para tela-principal.php
