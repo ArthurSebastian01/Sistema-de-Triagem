@@ -1,12 +1,6 @@
 <?php
 session_start();
 
-// Verificar se o usuário está autenticado (logado)
-if (!isset($_SESSION['email'])) {
-    header("Location: tela-de-login.php");
-    exit();
-}
-
 // Conecte-se ao banco de dados (substitua com suas próprias configurações)
 $servidor = "localhost";
 $usuario = "root";
@@ -73,7 +67,6 @@ if ($resultado_usuario && $resultado_usuario->num_rows > 0) {
         $quem_historico = $row_ficha['quem_historico'];
         $qual_doenca = $row_ficha['qual_doenca'];
 
-        session_destroy();
     } else {
         // Trate o caso em que não há dados na tabela 'ficha' para o 'id_usuario'
         // Você pode definir valores padrão ou fazer qualquer outra coisa

@@ -19,7 +19,7 @@
         
         div {
             position: absolute;
-            top: 25%;
+            top: 43%;
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 80px;

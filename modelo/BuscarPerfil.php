@@ -26,8 +26,6 @@ if ($resultado && $resultado->num_rows > 0) {
     $sexo = $row['sexo'];
     $telefone = $row['telefone'];
     
-    // Destrua a sessão após buscar os detalhes do usuário
-    session_destroy();
 } else {
     // Tratar o caso em que o e-mail da sessão não corresponde a um usuário válido
     // Você pode redirecionar para uma página de erro ou fazer qualquer outra coisa
