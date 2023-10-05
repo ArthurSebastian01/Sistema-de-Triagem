@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "conexao_bd.php";
 
 $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
@@ -16,7 +17,9 @@ $resultado_usuarios = mysqli_query($conn, $result_usuarios);
 // Verifica se a inserção foi bem-sucedida
 if ($resultado_usuarios) {
     // Redireciona para tela-principal.php
-    header("Location: Dados_clinicos.php");
+    //header("Location: Dados_clinicos.php");
+    $_SESSION['email'] = $email;
+    header("location: Dados_clinicos.php");
     exit(); // Certifique-se de sair após o redirecionamento
 } else {
     // Se ocorrer um erro na inserção, defina uma mensagem de erro na variável de sessão

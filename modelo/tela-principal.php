@@ -55,7 +55,7 @@ session_start();
         </div>
         <ul class="nav-list">
           <li>
-            <a href="Dados_clinicos.php">Dados clínicos do paciente</a>
+            <a href="FichaAnamnese.php">Dados clínicos do paciente</a>
           </li>
           <li>
             <a>Relatório</a>
