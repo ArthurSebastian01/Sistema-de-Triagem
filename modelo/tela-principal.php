@@ -62,7 +62,7 @@ session_start();
             <!-- Menu suspenso para "Relatório" -->
             <ul>
               <li><a href="RelatorioGeral.php">Relatorio Geral</a></li>
-              <li><a href="grafico.html">Gráfico</a></li>
+              <li><a href="grafico.php">Gráfico</a></li>
             </ul>
           </li>
           <li><a>Configurações</a>

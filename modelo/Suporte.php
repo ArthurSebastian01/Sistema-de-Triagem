@@ -7,26 +7,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Suporte Online</title>
     <style>
-        body{
+        body {
             font-size: 20px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            font-family:fantasy;
+            font-family: fantasy;
             background: #0ea1338a;
             background-size: cover;
             height: 100vh;
         }
-        div{
+
+        div {
             position: absolute;
             top: 20%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             padding: 80px;
             border-radius: 15px;
             color: black;
             height: 55vh;
-            
         }
+
         input, select, textarea {
             padding: 15px;
             border: none;
@@ -34,7 +35,8 @@
             font-size: 15px;
             opacity: 0.6;
         }
-        button{
+
+        button {
             background-color: #2E8B57;
             border: none;
             padding: 15px;
@@ -42,56 +44,38 @@
             border-radius: 10px;
             color: black;
             font-size: 15px;
-            
         }
-        button:hover{
-            background-color:green;
+
+        button:hover {
+            background-color: green;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
 <div>
-  <h1><center>Suporte Online</center></h1>
-  <center>
-    <select id="requisicao" name="requisicao" type="text" placeholder="Requisição" required>
-      <option value="">Tipo de requisição</option>
-      <option value="Cadastro">Cadastro</option>
-      <option value="Anamnese">Ficha de Anamnese</option>
-      <option value="Grafico">Gráfico</option>
-      <option value="Outros">Outros</option>
-    </select>
-    <br><br>
+    <h1><center>Suporte Online</center></h1>
+    <center>
+        <form method="post" action="SuporteBD.php">
+            <select id="requisicao" name="requisicao" type="text" placeholder="Requisição" required>
+                <option value="">Tipo de requisição</option>
+                <option value="Cadastro">Cadastro</option>
+                <option value="Anamnese">Ficha de Anamnese</option>
+                <option value="Grafico">Gráfico</option>
+                <option value="Outros">Outros</option>
+            </select>
+            <br><br>
 
-    <textarea id="mensagem" name="mensagem" style="color: black;" placeholder="Requisição" rows="3" cols="32" required></textarea>
-    <br><br>
-    <br>
-    <button type="button" onclick="enviarRequisicao()">Enviar requisição</button>
-    <p id="mensagem-envio" style="display: none; text-align: center; color: black; font-weight: bold;">Requisição enviada com sucesso</p>
-    <p id="mensagem-erro" style="display: none; color: red;">Preencha todos os campos obrigatórios</p>
-  </center>
+            <textarea id="mensagem" name="mensagem" style="color: black;" placeholder="Requisição" rows="3" cols="32" required></textarea>
+            <br><br>
+            <br>
+            <button type="submit" name="enviarRequisicao">Enviar requisição</button>
+        </form>
+        <p id="mensagem-envio" style="display: none; text-align: center; color: black; font-weight: bold;">Requisição enviada com sucesso</p>
+        <p id="mensagem-erro" style="display: none; color: red;">Preencha todos os campos obrigatórios</p>
+    </center>
 </div>
-<script>
-    function enviarRequisicao() {
-        var requisicao = document.getElementById("requisicao").value;
-        var mensagem = document.getElementById("mensagem").value;
-
-        if (requisicao  === '' || mensagem === '') {
-            var mensagemErro = document.getElementById("mensagem-erro");
-            mensagemErro.style.display = "block";
-        } else {
-            // Simulando o envio da requisição (pode ser substituído pela lógica real)
-            setTimeout(function() {
-                document.getElementById("mensagem-envio").style.display = "block";
-                
-                // Aguardar 2 segundos e redirecionar para a tela principal
-                setTimeout(function() {
-                    window.location.href = "tela-principal.html";
-                }, 2000);
-            }, 1000);
-        }
-    }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 </body>
 </html>

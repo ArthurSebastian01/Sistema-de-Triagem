@@ -1,59 +1,49 @@
 <?php
-// Conexão com o banco de dados (ajuste as configurações conforme necessário)
-$servername = "seu_servidor";
-$username = "seu_usuario";
-$password = "sua_senha";
-$dbname = "seu_banco_de_dados";
+session_start();
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Conecte-se ao banco de dados (substitua com suas próprias configurações)
+$servidor = "localhost";
+$usuario = "root";
+$senha_db = "";
+$banco = "sistema_triagem";
 
-// Verifique a conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
+$conexao = new mysqli($servidor, $usuario, $senha_db, $banco);
+
+if ($conexao->connect_error) {
+    die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
 }
 
-// Consulta SQL para recuperar os nomes e valores das doenças
-$sqlDoencas = "SELECT nome, valor FROM tabela_doencas";
-$resultDoencas = $conn->query($sqlDoencas);
+// Consulta para obter o ID do usuário com base no e-mail da sessão
+$email = $_SESSION['email'];
+$consulta_usuario = "SELECT id, nome FROM usuarios WHERE email = '$email'";
+$resultado_usuario = $conexao->query($consulta_usuario);
 
-if ($resultDoencas->num_rows > 0) {
-    // Crie um array para armazenar as informações das doenças
-    $doencas = array();
+if ($resultado_usuario && $resultado_usuario->num_rows > 0) {
+    $row_usuario = $resultado_usuario->fetch_assoc();
+    $id_usuario = $row_usuario['id'];
+    $nome_usuario = $row_usuario['nome'];
 
-    // Preencha o array com as informações das doenças
-    while ($row = $resultDoencas->fetch_assoc()) {
-        $doenca = array(
-            "nome" => $row["nome"],
-            "valor" => $row["valor"]
-        );
-        $doencas[] = $doenca;
-    }
+    // Consulta para obter os dados da tabela 'ficha' com base no 'id_usuario'
+    $consulta_ficha = "SELECT nivel_alteracao_intestino, nivel_sangramento_fezes, nivel_dor_abdomen, nivel_emagrecimento_repentino FROM ficha WHERE id_usuario = '$id_usuario'";
+    $resultado_ficha = $conexao->query($consulta_ficha);
 
-    // Consulta SQL para obter o nome do usuário de outra tabela (ajuste a consulta conforme necessário)
-    $sqlNomeUsuario = "SELECT nome FROM tabela_usuarios WHERE id = 1"; // Supondo que você deseja o nome do usuário com ID 1
+    if ($resultado_ficha && $resultado_ficha->num_rows > 0) {
+        $row_ficha = $resultado_ficha->fetch_assoc();
 
-    $resultNomeUsuario = $conn->query($sqlNomeUsuario);
-
-    if ($resultNomeUsuario->num_rows > 0) {
-        $rowNomeUsuario = $resultNomeUsuario->fetch_assoc();
-        $nomePaciente = $rowNomeUsuario["nome"];
-
-        // Crie um array que inclui o nome do paciente e as informações das doenças
-        $data = array(
-            "nomePaciente" => $nomePaciente,
-            "doencas" => $doencas
-        );
-
-        // Feche a conexão com o banco de dados
-        $conn->close();
-
-        // Converta o array em JSON e imprima-o
-        header('Content-Type: application/json');
-        echo json_encode($data);
+        // Obtenha os valores relevantes da tabela 'ficha'
+        $nivel_alteracao_intestino = $row_ficha['nivel_alteracao_intestino'];
+        $nivel_sangramento_fezes = $row_ficha['nivel_sangramento_fezes'];
+        $nivel_dor_abdomen = $row_ficha['nivel_dor_abdomen'];
+        $nivel_emagrecimento_repentino = $row_ficha['nivel_emagrecimento_repentino'];
     } else {
-        echo "Nome do usuário não encontrado.";
+        // Trate o caso em que não há dados na tabela 'ficha' para o 'id_usuario'
+        // Você pode definir valores padrão ou fazer qualquer outra coisa
     }
 } else {
-    echo "Nenhum resultado encontrado no banco de dados de doenças.";
+    // Tratar o caso em que o e-mail da sessão não corresponde a um usuário válido
+    // Você pode redirecionar para uma página de erro ou fazer qualquer outra coisa
 }
+
+// Feche a conexão com o banco de dados
+$conexao->close();
 ?>
