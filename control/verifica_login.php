@@ -3,7 +3,7 @@
         session_start();
     }
     if(isset($_SESSION['email'])) {
-        header('Location: modelo/tela-principal.php');
+        header('Location: view/home.php');
         exit();
     }
 ?>

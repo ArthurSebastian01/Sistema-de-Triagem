@@ -1,5 +1,6 @@
 <?php
-  require_once("control/verifica_login.php");
+  require_once("./control/verifica_login.php");
+  include_once("./view/components/navbar.php");
 
 ?>
 <!DOCTYPE html>
@@ -9,25 +10,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema de Triagem</title>
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="stylesheet" href="./css/style_global.css"/>
   </head>
 
   <body>
-    <header>
-      <nav>
-        <a class="logo" href="/">Sistema de Triagem</a>
-        <div class="mobile-menu">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-        <ul class="nav-list">
-          <li><a href="modelo/tela-de-login.php">Acessar</a></li>
-          <li><a href="modelo/tela-de-cadastro.php">Cadastar-se</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main></main>
-    <script src="modelo/mobile-navbar.js"></script>
+    <div class="container">
+
+    </div>
   </body>
 </html>
