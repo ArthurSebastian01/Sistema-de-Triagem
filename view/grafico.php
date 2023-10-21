@@ -1,28 +1,20 @@
-<?php include "ConexaoBDgrafico.php"; ?>
+<?php
+    include_once("../control/ConexaoBDgrafico.php"); 
+    include_once("./components/navbar.php");
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-radar.min.js"></script>
-    <style type="text/css">
-        html, body, #container {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        main {
-            background: url("../imgFundo.jpg") no-repeat center center;
-            background-size: cover;
-            height: 92vh;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/grafico.css">
+    <link rel="stylesheet" href="../css/style_global.css">
 </head>
 <body>
-<main>
+<div class="content">
     <div id="container"></div>
-</main>
+</div>
 <script>
     anychart.onDocumentReady(function () {
         var valores = [
@@ -48,7 +40,7 @@
         chart.area(valores).name('<?php echo $nome_usuario; ?>').markers(true).fill("#E55934", 0.3).stroke("#E55934")
 
         // set chart title
-        chart.title("Sistema de Triagem")
+        chart.title("Gráfico de sintomas")
             // set legend
             .legend(true);
 
