@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Conecte-se ao banco de dados (substitua com suas próprias configurações)
 $servidor = "localhost";

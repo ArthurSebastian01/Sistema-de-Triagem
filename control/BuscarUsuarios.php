@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 include_once("conexao_bd.php");
 
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -20,6 +22,7 @@ if ($email != "" && $senha != ""){
         exit();
     }
 }
+
 
 
 

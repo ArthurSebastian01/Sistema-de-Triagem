@@ -11,13 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/perfiluser.css">
     <link rel="stylesheet" href="../css/style_global.css">
-    <title>Dados do Paciente</title>
+    <title>PERFIL DO USUARIO</title>
 </head>
 <body>
 <div class="container">
   <div class="content">
     <form method="POST" action="../control/AlterarPerfil.php">
-    <h1>Perfil do usuario</h1>
+    <h1>PERFIL DO USUARIO</h1>
         <label>
             <span>Nome: </span>
             <input type="text" placeholder="Nome" name="Nome" value="<?php echo $nome; ?>">

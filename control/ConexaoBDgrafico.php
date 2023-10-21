@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Conecte-se ao banco de dados (substitua com suas próprias configurações)
 $servidor = "localhost";
@@ -43,7 +45,6 @@ if ($resultado_usuario && $resultado_usuario->num_rows > 0) {
     // Tratar o caso em que o e-mail da sessão não corresponde a um usuário válido
     // Você pode redirecionar para uma página de erro ou fazer qualquer outra coisa
 }
-
 // Feche a conexão com o banco de dados
 $conexao->close();
 ?>

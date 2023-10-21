@@ -1,11 +1,12 @@
+/* Seu CSS existente */
 .navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background:#2E8B57;
+  background: #2E8B57;
   height: 100px;
   z-index: 1000;
-} 
+}
 
 .nav-list {
   font-size: 20px;
@@ -13,40 +14,40 @@
   display: flex;
 }
 
- .nav-list li {
-    position: relative;
-    display: inline-block;
-    margin-left: 30px;
-    letter-spacing: 3px;
-    margin-left: 50px;
+.nav-list li {
+  position: relative;
+  display: inline-block;
+  margin-left: 30px; /* Controle o espaçamento entre os itens aqui */
+  letter-spacing: 3px;
 }
 
 .nav-list li ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #2E8B57;
-    border: 1px solid #ddd;
-    padding: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2E8B57;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-list li:hover {
   color: #fff;
 }
+
 .nav-list li a:hover {
   color: #fff;
   transform: scale(1.1);
 }
 
 .nav-list li ul li {
-    display: block;
-    margin: 5px 0;
+  display: block;
+  margin: 5px 0;
 }
 
 .nav-list li:hover ul {
-    display: block;
+  display: block;
 }
 
 .nav-list li a {
@@ -66,30 +67,37 @@
   color: black;
 }
 
-li a{
+li a {
   color: #000;
-  
 }
-  
-  @keyframes navLinkFade {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  .mobile-menu.active .line1 {
-    transform: rotate(-45deg) translate(-8px, 8px);
-  }
-  
-  .mobile-menu.active .line2 {
+
+/* Adicione o seguinte estilo para o menu de usuários não logados */
+.nav-list.not-logged-in li {
+  display: inline-block;
+  margin-left: 30px;
+  letter-spacing: 3px;
+}
+
+/* Seu CSS existente continua abaixo */
+@keyframes navLinkFade {
+  from {
     opacity: 0;
+    transform: translateX(50px);
   }
-  
-  .mobile-menu.active .line3 {
-    transform: rotate(45deg) translate(-5px, -7px);
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}

@@ -1,6 +1,7 @@
 <?php
-session_start(); // Inicie a sessão para acessar variáveis de sessão
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Verifique se a variável de sessão mensagem_erro está definida
 if (isset($_SESSION['mensagem_erro'])) {
     echo $_SESSION['mensagem_erro'];
@@ -21,7 +22,7 @@ if (isset($_SESSION['mensagem_erro'])) {
 <body>
     <div class="container">
         <div class="content">
-            <h1>LOGIN</h1>
+            <h1>Login</h1>
             <form method="POST" action="../control/BuscarUsuarios.php"> 
                 <input type="email" placeholder="E-mail" name="email" required>
                 <input type="password" placeholder="Senha" name="senha" required>

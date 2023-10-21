@@ -16,7 +16,7 @@ $sql = "UPDATE usuarios SET nome = '$nome', sobrenome = '$sobrenome', email = '$
 
 if (mysqli_query($conn, $sql)) {
     // Os dados foram atualizados com sucesso
-    header("Location: PerfilUser.php");
+    header("Location:../view/PerfilUser.php");
     exit();
 } else {
     // Lida com erros, se houver
