@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($conexao->query($sql) === TRUE) {
         // Redirecionar para a tela-principal.php após a inserção bem-sucedida
-        header("Location: tela-principal.php");
+        header("Location: ../view/home.php");
         exit(); // Certifique-se de sair após o redirecionamento
     } else {
         echo "Erro ao inserir dados: " . $conexao->error;
