@@ -56,7 +56,7 @@
           // Calcule a média dos valores
           
           $media = ($row_ficha['nivel_alteracao_intestino'] + $row_ficha['nivel_sangramento_fezes'] + $row_ficha['nivel_dor_abdomen'] + $row_ficha['nivel_emagrecimento_repentino']) / 4;
-          if($media>4){
+          if($media>=4){
             echo "Prezado(a),
             
             Conforme nossos registros e análises de dados, observamos que o seu estado de saúde não está de acordo com o padrão de referência esperado.<br><br>
@@ -74,8 +74,28 @@
             echo "<br><br><br>";
           }
 
+          if($media<4){
+            if($media>=3){
+            echo "Prezado(a),
+            
+            Conforme nossos registros e análises de dados, observamos que o seu estado de saúde não está totalmente de acordo com o padrão de referência esperado.<br><br>
+  
+            É importante priorizar a sua saúde e bem-estar. Recomendamos que você agende uma consulta médica o mais breve possível para uma avaliação mais detalhada e discussão sobre o melhor plano de tratamento, tendo em vista que os resultados obtidos podem não estar coerentes.<br><br>
+            
+            Lembramos que a prevenção e o cuidado atempado são fundamentais para uma vida saudável.<br><br>
+
+            Segue seus resulatados abaixo!<br><br>
+            
+            Atenciosamente,<br><br>
+            
+            Equipe SISTECCRE";
+
+            echo "<br><br><br>";
+          }
+        }
+
           if($media<3){
-            if($media>2){
+            if($media>=2){
             echo "Prezado(a),
 
             Conforme nossos registros e análises de dados, observamos que o seu estado de saúde está bem proximo do padrão de referência esperado, mas não em uma media aceitavel.<br><br>
@@ -98,7 +118,7 @@
             if($media<2){
             echo "Prezado(a),
 
-            Conforme nossos registros e análises de dados, observamos que o seu estado de saúde está está de acordo com o padrão de referência esperado.<br><br>
+            Conforme nossos registros e análises de dados, observamos que o seu estado de saúde está em um media aceitavel com o padrão de referência esperado.<br><br>
   
             É importante priorizar a sua saúde e bem-estar. Recomendamos que mesmo que os resultados estejam de acordo com o padrão esperado que você agende uma consulta médica o mais breve possível para uma avaliação mais detalhada e discussão sobre o melhor plano de tratamento, tendo em vista que os resultados obtidos podem não estar coerentes.<br><br>
             
@@ -114,7 +134,7 @@
           }
         }
 
-        if($media<1){
+        if($media<=1){
             echo "Prezado(a),
 
             Conforme nossos registros e análises de dados, observamos que o seu estado de saúde está está de acordo com o padrão de referência esperado.<br><br>
