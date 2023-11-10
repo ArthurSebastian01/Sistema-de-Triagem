@@ -37,7 +37,7 @@
         chart.yGrid().palette(["gray 0.1", "gray 0.2"]);
 
         // create first series
-        chart.area(valores).name('<?php echo $nome_usuario; ?>').markers(true).fill("#E55934", 0.3).stroke("#E55934")
+        chart.area(valores).name(' ').markers(true).fill("#E55934", 0.3).stroke("#E55934")
 
         // set chart title
         chart.title("Gráfico de sintomas")
