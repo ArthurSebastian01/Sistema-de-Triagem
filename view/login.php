@@ -27,6 +27,9 @@ if (isset($_SESSION['mensagem_erro'])) {
                 <input type="email" placeholder="E-mail" name="email" required>
                 <input type="password" placeholder="Senha" name="senha" required>
                 <button type="submit">Acessar</button>
+                <a href="../index.php">
+                    <button type="button">Cancelar</button>
+                    </a>
             </form>
         </div>
     </div>

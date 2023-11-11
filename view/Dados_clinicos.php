@@ -232,7 +232,6 @@
                 </label>
                 </div>  
 
-                <input type="submit" value="Atualizar" class="btn_atualizar">  
             </form>
 
 </div>

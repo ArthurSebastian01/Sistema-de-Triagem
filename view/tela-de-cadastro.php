@@ -33,6 +33,9 @@ if (isset($_SESSION['mensagem_erro'])) {
                 <input type="password" placeholder="Senha" name="senha" required>
                 <input type="password" placeholder="Confirmar senha" name="confirmar_senha" required>
                 <button type="submit">Cadastrar</button>
+                <a href="../index.php">
+                    <button type="button">Cancelar</button>
+                    </a>
             </form>
         </div>
     </div>

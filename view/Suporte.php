@@ -35,6 +35,9 @@ if (isset($_SESSION['mensagem_erro'])) {
             <textarea id="mensagem" name="mensagem" style="color: black;" placeholder="Requisição" rows="3" cols="32" required></textarea>
            <br>
             <button type="submit" name="enviarRequisicao">Enviar requisição</button>
+            <a href="home.php">
+            <button type="button" class="btn btn-primary">Cancelar</button>
+        </a>
             </form>
         </div>
     </div>

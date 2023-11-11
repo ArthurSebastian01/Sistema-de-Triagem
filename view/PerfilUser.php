@@ -50,6 +50,9 @@
         <button type="submit" class="btn_atualizar">Atualizar</button>
     </form>
     <button class="btn_deletar"><a href="confirmar_exclusao.php">Deletar Perfil</a></button>
+    <a href="home.php">
+            <button type="button" class="btn btn-primary">Voltar</button>
+        </a>
   </div>
 </div>
 </body>

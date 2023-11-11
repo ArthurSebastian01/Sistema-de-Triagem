@@ -66,10 +66,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $quem_historico = $_POST["quem_historico"];
     $qual_doenca = $_POST["qual_doenca"];
 
+    if (empty($nome) || empty($idade) || empty($peso) || empty($altura) || empty($sexo) ||
+    empty($bebe_agua) || empty($nivel_hidratacao) || empty($toma_refrigerante) || empty($mudanca_habito_hidratacao)) {
+    echo "Por favor, preencha todos os campos obrigatórios.";
+} else {
     // Execute a consulta SQL para inserir os dados na tabela 'ficha' (substitua com sua própria consulta)
-    $sql = "INSERT INTO ficha (id_usuario, nome, idade, peso, altura, sexo, bebe_agua, nivel_hidratacao, toma_refrigerante, mudanca_habito_hidratacao, faz_coco, nivel_faz_coco, dor_fazer_coco, nivel_dor_fazer_coco, alteracao_habito_intestinal, nivel_alteracao_intestino, dificuldade_infancia, sangramento_fezes, nivel_sangramento_fezes, hemorroida, dor_abdomen, nivel_dor_abdomen, come_fritura, come_presunto, come_hamburguer, toma_leite_caixinha, uso_tempero, come_fastfood_sem, come_comida_cong, come_salada, azeite_tempero, mudanca_habito_alimentar, emagrecimento_repentino, nivel_emagrecimento_repentino, historico_familiar, quem_historico, qual_doenca) 
-        VALUES ('$id_usuario', '$nome', '$idade', '$peso', '$altura', '$sexo', '$bebe_agua', '$nivel_hidratacao', '$toma_refrigerante', '$mudanca_habito_hidratacao', '$faz_coco', '$nivel_faz_coco', '$dor_fazer_coco', '$nivel_dor_fazer_coco', '$alteracao_habito_intestinal', '$nivel_alteracao_intestino', '$dificuldade_infancia', '$sangramento_fezes', '$nivel_sangramento_fezes', '$hemorroida', '$dor_abdomen', '$nivel_dor_abdomen', '$come_fritura', '$come_presunto', '$come_hamburguer', '$toma_leite_caixinha', '$uso_tempero', '$come_fastfood_sem', '$come_comida_cong', '$come_salada', '$azeite_tempero', '$mudanca_habito_alimentar', '$emagrecimento_repentino', '$nivel_emagrecimento_repentino', '$historico_familiar', '$quem_historico', '$qual_doenca')";
-    
+    $sql = "INSERT INTO ficha (id_usuario, nome, idade, peso, altura, sexo, bebe_agua, nivel_hidratacao, toma_refrigerante, mudanca_habito_hidratacao, /*...outros campos*/) 
+        VALUES ('$id_usuario', '$nome', '$idade', '$peso', '$altura', '$sexo', '$bebe_agua', '$nivel_hidratacao', '$toma_refrigerante', '$mudanca_habito_hidratacao', /*...outros valores*/)";
+
     if ($conexao->query($sql) === TRUE) {
         // Redirecionar para a tela-principal.php após a inserção bem-sucedida
         header("Location: ../view/home.php");
@@ -80,5 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Feche a conexão com o banco de dados
     $conexao->close();
+}
 }
 ?>

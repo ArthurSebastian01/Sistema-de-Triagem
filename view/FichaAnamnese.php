@@ -225,7 +225,9 @@
                 <span>Qual doença?</span>
                 <input type="text" name="qual_doenca" placeholder="">
             </label>  
-            <input type="submit" value="Enviar class="btn_atualizar">  
+            <div class="button-container">
+                    <input type="submit" value="Enviar" class="btn_enviar">
+                </div>
         </form>
 
 </div>

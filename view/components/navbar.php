@@ -32,6 +32,7 @@ if (isset($_SESSION["email"]) && $_SESSION["email"] != "") {
                 <ul>
                     <li><a href="RelatorioGeral.php">RELATÓRIO GERAL</a></li>
                     <li><a href="grafico.php">GRÁFICO</a></li>
+                    <li><a href="teste.php">TESTE</a></li>
                 </ul>
             </li>
             <li>
